@@ -32,6 +32,11 @@ router.post('/', multer().none(), async (req, res) => {
 router.delete('/:id', async (req, res) => {
   await TodoModel.deleteOne({ _id: req.params.id });
   res.send()
+});
+
+router.delete('/', async (req, res) => {
+  await TodoModel.deleteMany();
+  res.send();
 })
 
 module.exports = router;
