@@ -24,6 +24,10 @@ app.all('/*', function(req, res, next) {
   next();
 });
 
+app.get('/', function(req, res) {
+  res.send();
+})
+
 const todoRouter = require('./routes/todo');
 app.use('/todo', todoRouter);
 
