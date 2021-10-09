@@ -12,7 +12,7 @@ mongoose.connect(uri, {
 .catch(err => console.log(err))
 
 const app = express()
-const port = 80;
+const port = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(express.urlencoded()); 
